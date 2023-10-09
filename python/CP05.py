@@ -1,5 +1,6 @@
 import random
 
+# Função para obter a quantidade de jogadores
 def obter_quantidade_jogadores():
     while True:
         try:
@@ -11,6 +12,7 @@ def obter_quantidade_jogadores():
         except ValueError:
             print("Entrada inválida. Insira um número de jogadores válido.")
 
+# Função para obter os nomes dos jogadores
 def obter_nomes_jogadores(num_jogadores):
     nomes = []
     for i in range(num_jogadores):
@@ -18,6 +20,7 @@ def obter_nomes_jogadores(num_jogadores):
         nomes.append(nome)
     return nomes
 
+# Função para gerar uma cartela
 def gerar_cartela():
     cartela = []
 
@@ -35,6 +38,7 @@ def gerar_cartela():
 
     return cartela
 
+# Função para gerar as cartelas dos jogadores
 def gerar_cartelas_jogadores(nomes_jogadores):
     cartelas = {}
     for nome in nomes_jogadores:
@@ -42,18 +46,21 @@ def gerar_cartelas_jogadores(nomes_jogadores):
         cartelas[nome] = cartela
     return cartelas
 
+# Função para exibir uma cartela com números marcados como "X"
 def exibir_cartela(cartela):
     for i in range(5):
         linha = cartela[i * 5:i * 5 + 5]
         linha = ["X" if num == -1 else str(num) for num in linha]
         print(" ".join(linha))
 
+# Função para sortear um número aleatório
 def sortear_numero(antigos):
     while True:
         numero = random.randint(1, 75)
         if numero not in antigos:
             return numero
 
+# Função para verificar se um jogador ganhou
 def verificar_ganhador(cartela):
     # Verifica se uma linha, coluna ou diagonal foi preenchida com -1 (números sorteados)
     for i in range(5):
@@ -65,6 +72,7 @@ def verificar_ganhador(cartela):
             return True
     return False
 
+# Função principal
 def main():
     quantidade_jogadores = obter_quantidade_jogadores()
     nomes_jogadores = obter_nomes_jogadores(quantidade_jogadores)
@@ -90,6 +98,7 @@ if __name__ == "__main__":
     main()
 import random
 
+# Função para obter a quantidade de jogadores
 def obter_quantidade_jogadores():
     while True:
         try:
@@ -101,6 +110,7 @@ def obter_quantidade_jogadores():
         except ValueError:
             print("Entrada inválida. Insira um número de jogadores válido.")
 
+# Função para obter os nomes dos jogadores
 def obter_nomes_jogadores(num_jogadores):
     nomes = []
     for i in range(num_jogadores):
@@ -108,6 +118,7 @@ def obter_nomes_jogadores(num_jogadores):
         nomes.append(nome)
     return nomes
 
+# Função para gerar uma cartela
 def gerar_cartela():
     cartela = []
 
@@ -125,6 +136,7 @@ def gerar_cartela():
 
     return cartela
 
+# Função para gerar as cartelas dos jogadores
 def gerar_cartelas_jogadores(nomes_jogadores):
     cartelas = {}
     for nome in nomes_jogadores:
@@ -132,18 +144,21 @@ def gerar_cartelas_jogadores(nomes_jogadores):
         cartelas[nome] = cartela
     return cartelas
 
+# Função para exibir uma cartela com números marcados como "X"
 def exibir_cartela(cartela):
     for i in range(5):
         linha = cartela[i * 5:i * 5 + 5]
         linha = ["X" if num == -1 else str(num) for num in linha]
         print(" ".join(linha))
 
+# Função para sortear um número aleatório
 def sortear_numero(antigos):
     while True:
         numero = random.randint(1, 75)
         if numero not in antigos:
             return numero
 
+# Função para verificar se um jogador ganhou
 def verificar_ganhador(cartela):
     # Verifica se uma linha, coluna ou diagonal foi preenchida com -1 (números sorteados)
     for i in range(5):
@@ -155,6 +170,7 @@ def verificar_ganhador(cartela):
             return True
     return False
 
+# Função principal
 def main():
     quantidade_jogadores = obter_quantidade_jogadores()
     nomes_jogadores = obter_nomes_jogadores(quantidade_jogadores)
