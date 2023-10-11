@@ -13,6 +13,7 @@ import Login from './routes/Login.jsx'
 import Pedido from './routes/Pedido.jsx'
 import Produtos from  './routes/Produtos.jsx'
 import Sobre from './routes/Sobre.jsx'
+import Nav from './componentes/Nav'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router=createBrowserRouter([
@@ -20,11 +21,12 @@ const router=createBrowserRouter([
   
   path:'/',
   element:<App/>,
-  errorElement: <Error />,
+  
   
   
   children:[
       {path: '/', element:<Home/>},
+      {path: '/Nav', element:<Nav/>},
       {path: '/EditarPedido', element:<EditarPedido/>},
       {path: '/EditarProduto', element:<EditarProduto/>},
       {path: '/Error', element:<Error/>},
