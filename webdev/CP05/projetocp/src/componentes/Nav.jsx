@@ -5,9 +5,6 @@ function Nav() {
   
 /*Hooks navigate */
   const navigate = useNavigate();
-
-
-
   return (
     <>
       <header>
@@ -17,7 +14,7 @@ function Nav() {
             <li>
               <Link to="/">Home</Link>
             </li>
-        
+            
             <li>
               <Link to="/EditarPedido">Conteudo</Link>
             </li>
@@ -27,11 +24,11 @@ function Nav() {
             <li>
               <Link to="/login">LOGIN</Link>
             </li>
-            <button onClick={handleLogout}>Logout</button>
           </ul>
         </nav>
       </header>
     </>
   );
 }
+
 export default Nav;
