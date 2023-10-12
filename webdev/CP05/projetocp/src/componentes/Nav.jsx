@@ -16,13 +16,13 @@ function Nav() {
             </li>
             
             <li>
-              <Link to="/EditarPedido">Conteudo</Link>
+              <Link to="/Produtos">Produtos</Link>
             </li>
             <li>
-              <Link to="/cadastrar/produto">Cadastrar Produto</Link>
+              <Link to="/Sobre">Sobre</Link>
             </li>
             <li>
-              <Link to="/login">LOGIN</Link>
+              <Link to="/Login">Login</Link>
             </li>
           </ul>
         </nav>
