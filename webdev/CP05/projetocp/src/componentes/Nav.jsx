@@ -1,5 +1,7 @@
 import {} from 'react';
 import { Link,useNavigate } from 'react-router-dom';
+import '../CSS/Nav.css'
+import nome from '../medias/yoshida_bg.png'
 
 function Nav() {
   
@@ -8,22 +10,14 @@ function Nav() {
   return (
     <>
       <header>
-        <h2>Projeto</h2>
+        
         <nav>
+        <img id="nome" src={nome} alt="" />
           <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            
-            <li>
-              <Link to="/Produtos">Produtos</Link>
-            </li>
-            <li>
-              <Link to="/Sobre">Sobre</Link>
-            </li>
-            <li>
-              <Link to="/Login">Login</Link>
-            </li>
+            <li><a><Link to="/">Home</Link></a></li>
+            <li><a><Link to="/Produtos">Produtos</Link></a></li>
+            <li><a><Link to="/Sobre">Sobre</Link></a></li>
+            <li><a><Link to="/Login">Login</Link></a></li>
           </ul>
         </nav>
       </header>
