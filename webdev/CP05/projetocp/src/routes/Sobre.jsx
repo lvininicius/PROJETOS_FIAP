@@ -18,7 +18,7 @@ function Sobre() {
 
   return (
     <>
-      <h1>Sobr</h1>
+      <h1>Sobre</h1>
       <div className="slideshow-container">
         <Slider {...settings}>
           <div>
