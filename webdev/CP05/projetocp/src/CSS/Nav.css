@@ -1,11 +1,20 @@
 *{
     padding:0%;
+    color: white;
 }
 
 body{
     background-image: url('../medias/restaurante.jpg');
     background-size: cover; /* Cobrir todo o elemento pai */
     background-repeat: no-repeat;
+}
+
+input{
+    color: black;
+}
+
+button{
+    color: black;
 }
 
 body{

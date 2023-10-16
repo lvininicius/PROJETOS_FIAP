@@ -3,7 +3,7 @@ import {} from 'react'
 function Error (){
   return(
     <>
-    <h1>Error</h1>
+    <h1>Erro 404</h1>
     </>
   )
 }

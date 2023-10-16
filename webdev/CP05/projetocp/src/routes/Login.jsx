@@ -20,26 +20,30 @@ function Login() {
   };
 
   return (
-    <section>
-      <h1>Login</h1>
-      {getUsuario && getSenha ? (
-        <Produtos />
-      ) : (
-        <form onSubmit={verifSubmit}>
-          <p>
-            Usuário:
-            <input type="text" ref={usuario} />
-          </p>
-          <br />
-          <p>
-            Senha:
-            <input type="password" ref={senha} />
-          </p>
-          <br />
-          <input type="submit" value="Login" />
-        </form>
-      )}
-    </section>
+    <>
+      <section>
+        <h1>Login</h1>
+        <p>User: admin</p>
+        <p>Senha: 12345</p>
+        {getUsuario && getSenha ? (
+          <Produtos />
+        ) : (
+          <form onSubmit={verifSubmit}>
+            <p>
+              Usuário:
+              <input type="text" ref={usuario} />
+            </p>
+            <br />
+            <p>
+              Senha:
+              <input type="password" ref={senha} />
+            </p>
+            <br />
+            <input type="submit" value="Login" />
+          </form>
+        )}
+      </section>
+    </>
   );
 }
 
