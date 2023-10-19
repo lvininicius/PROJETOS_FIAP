@@ -65,9 +65,19 @@ def verificar_ganhador(cartela):
         coluna = cartela[i::5]
         diagonal1 = cartela[::6]
         diagonal2 = cartela[4:21:4]
-        if all(num == -1 for num in linha) or all(num == -1 for num in coluna) or all(num == -1 for num in diagonal1) or all(num == -1 for num in diagonal2):
+
+        # Verifica se uma linha ou diagonal está completamente preenchida com -1
+        if all(num == -1 for num in linha) or all(num == -1 for num in diagonal1) or all(num == -1 for num in diagonal2):
             return True
+
+    # Verifica se alguma coluna foi completamente preenchida com -1
+    for j in range(5):
+        if all(cartela[i * 5 + j] == -1 for i in range(5)):
+            return True
+
     return False
+
+
 
 def exibir_placar(vitorias):
     print("Placar de Vitórias:")
