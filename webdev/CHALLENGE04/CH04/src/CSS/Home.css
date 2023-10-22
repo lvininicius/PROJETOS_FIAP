@@ -4,20 +4,52 @@
 
 body{
     background-color: #3D3A50;
+    overflow-x: hidden;
 }
 
-.centro-container {
+.page-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-}
+    text-align: center;
+    height: 100vh; /* Opcional: Isso garante que o conteúdo ocupe a altura inteira da janela do navegador. */
+  }
+  
+  .centro-container {
+    margin-top: 0px; /* Ajuste a margem superior conforme necessário para o espaçamento desejado. */
+  }
 
-.centro-container img{
-
+  .centro-container img{
     width: 300px;
-}
+  }
+  
+  .Nometyba {
+    padding: 50px;
+  }
+  
 .centro-container img:hover{
     transition: transform 0.3s, filter 0.3s;
     transform: scale(1.1);
     filter: brightness(1.5);
 }
+
+.QuemSomos {
+    background-color: #27F2B9;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .conteudo {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Lexend Extra', sans-serif;
+    color: #3D3A50;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+    
+  .conceito {
+    max-width: 350px;
+  }
+  
