@@ -12,6 +12,7 @@ body{
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%
     height: 100vh; /* Opcional: Isso garante que o conteúdo ocupe a altura inteira da janela do navegador. */
   }
   
@@ -39,7 +40,7 @@ body{
     width: 100%;
   }
   
-  .conteudo {
+.conteudo {
     font-weight: bold;
     font-size: 30px;
     font-family: 'Lexend Extra', sans-serif;
@@ -49,7 +50,56 @@ body{
     text-align: left;
   }
     
-  .conceito {
+.conceito {
     max-width: 350px;
+
   }
-  
+
+.engrenagem{
+    margin-top: 40px;
+    width: 250px;
+}
+
+.servicos{
+    font-size: 30px;
+    font-family:'Lexend Extra', sans-serif ;
+    color:white;
+}
+
+.planos-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plano {
+  margin-top: 50px;
+  margin-left: 15px;
+  width: 30%; /* Ajuste a largura conforme necessário */
+  padding: 20px;
+  background-color: #5DD1DB;
+  border-radius:50px ;
+}
+
+.plano p{
+    font-size: 24px;
+    font-family: 'Lexend Extra', sans-serif;
+    font-weight: bold;
+    color:#3D3A50;
+}
+
+h2 {
+  font-family: 'Lexend Extra', sans-serif;
+  color: #3D3A50 ;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+ul {
+  font-size:24px;
+  color: #3D3A50 ;
+  font-family: 'Lexend Extra', sans-serif;
+  list-style: none;
+}
+ul li {
+  padding: 5px 0;
+}

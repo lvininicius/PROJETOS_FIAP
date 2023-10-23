@@ -4,7 +4,7 @@ function Footer (){
     return(
         <>
         <section>
-            <h3>VAI TOMA NO SEU CUUUUUUUUUUUUUUU</h3>
+            <h3>VAI TOMA NO SEU rabico</h3>
         </section>
         </>
     );
