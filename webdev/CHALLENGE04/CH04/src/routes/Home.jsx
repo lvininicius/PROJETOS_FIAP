@@ -1,4 +1,4 @@
-import React from 'react'; // Certifique-se de importar 'React' corretamente
+import {} from 'react'; // Certifique-se de importar 'React' corretamente
 import Logo from '../assets/logo-removebg-preview.png';
 import Nomelogo from '../assets/TYBA.png';
 import Conceito from '../assets/apresentacao-removebg-preview.png';
