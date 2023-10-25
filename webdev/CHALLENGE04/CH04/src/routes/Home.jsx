@@ -1,9 +1,10 @@
-import {} from 'react'; // Certifique-se de importar 'React' corretamente
+import React from 'react';
 import Logo from '../assets/logo-removebg-preview.png';
 import Nomelogo from '../assets/TYBA.png';
 import Conceito from '../assets/apresentacao-removebg-preview.png';
 import Lampada from '../assets/lampada.png'
 import Engrenagem from '../assets/engrenagem.png'
+import Dolar from '../assets/dolar-removebg-preview.png'
 import '../CSS/Home.css';
 
 function Home() {
@@ -60,6 +61,15 @@ function Home() {
             </ul>
           </section>
         </div>
+        <section className="carteira-pontos">
+          <img src={Dolar} />
+          <p>
+            Carteira de pontos ?<br /><br/>
+            SIM, SIM, SIM!!<br /><br />
+            Quem não gosta daquele descontinho na hora de pagar alguma coisa em ?<br /><br />
+            Imagine ter o poder de transformar seus esforços em prol do meio ambiente em recompensas tangíveis. Com um sistema de pontos inovador, sua contribuição para a economia de energia e água pode se traduzir em benefícios diretos. Nossa carteira de pontos permite que você acumule recompensas e as utilize para pagar despesas de luz e água. Isso não é apenas uma forma de economizar, mas também de reforçar seu compromisso com a sustentabilidade. Vamos explorar como esses pontos podem tornar sua vida mais econômica e ecológica ao mesmo tempo.
+          </p>
+        </section>
       </div>
     </div>
   );

@@ -1,10 +1,18 @@
 .sectionFooter {
-    background-color: #5DD1DB;
-    margin-top: 98%;
-    
+  background-color: #5DD1DB;
+  text-align: center;
+  margin-top: 60%;
+  width: 100%;
 }
 
-.divFooter p{
-    text-align: center;
+.divFooter p {
+  font-size: 24px;
+  font-family: 'Lexend Extra', sans-serif;
+  font-weight: bold;
+  color: #3D3A50;
+  padding: 10px;
 }
 
+.divFooter img {
+  width: 100px;
+}
