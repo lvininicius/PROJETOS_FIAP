@@ -1,5 +1,6 @@
 *{
     padding: 0%;
+    margin: 0%;
 }
 
 body{
@@ -14,6 +15,7 @@ body{
     text-align: center;
     width: 100%;
     height: 100vh; /* Opcional: Isso garante que o conteúdo ocupe a altura inteira da janela do navegador. */
+    height: 100%;
   }
   
   .centro-container {
@@ -52,7 +54,6 @@ body{
     
 .conceito {
     max-width: 350px;
-
   }
 
 .engrenagem{

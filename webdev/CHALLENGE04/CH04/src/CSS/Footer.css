@@ -1,11 +1,18 @@
-.sectionFooter {
-  background-color: #5DD1DB;
-  text-align: center;
-  margin-top: 60%;
-  width: 100%;
+.root{
+  position: relative;
 }
 
-.divFooter p {
+Footer {
+  position: relative;
+  top: 100%;
+  width: 100%;
+  text-align: center;
+  background-color: #5DD1DB;
+  top: 100%;
+
+}
+
+Footer p {
   font-size: 24px;
   font-family: 'Lexend Extra', sans-serif;
   font-weight: bold;
@@ -13,6 +20,6 @@
   padding: 10px;
 }
 
-.divFooter img {
+img {
   width: 100px;
 }
