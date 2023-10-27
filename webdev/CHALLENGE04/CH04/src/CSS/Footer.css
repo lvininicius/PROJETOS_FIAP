@@ -13,7 +13,7 @@ Footer {
 }
 
 Footer p {
-  font-size: 24px;
+  font-size: 14px;
   font-family: 'Lexend Extra', sans-serif;
   font-weight: bold;
   color: #3D3A50;
@@ -21,5 +21,5 @@ Footer p {
 }
 
 img {
-  width: 100px;
+  width: 50px;
 }
