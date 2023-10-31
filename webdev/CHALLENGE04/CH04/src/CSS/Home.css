@@ -23,17 +23,19 @@ body{
   }
 
   .centro-container img{
-    width: 300px;
+    width: 100px;
   }
   
   .Nometyba {
-    padding: 50px;
+    width: 100px;
+    padding: 10px;
   }
   
 .centro-container img:hover{
     transition: transform 0.3s, filter 0.3s;
     transform: scale(1.1);
     filter: brightness(1.5);
+    width: 100px;
 }
 
 .QuemSomos {
@@ -43,8 +45,9 @@ body{
   }
   
 .conteudo {
+
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Lexend Extra', sans-serif;
     color: #3D3A50;
     display: flex;
@@ -53,7 +56,7 @@ body{
   }
     
 .conceito {
-    max-width: 350px;
+    width:350px;
   }
 
 .engrenagem{
@@ -106,7 +109,7 @@ ul li {
 }
 
 .carteira-pontos {
-  margin-top: 500px;
+  margin-top: 50px;
   background-color: #27F2B9;
   padding: 20px;
   width: 100%;
@@ -117,15 +120,14 @@ ul li {
 }
 
 .carteira-pontos img {
-  max-width: 50%; /* Ajuste a largura da imagem conforme necessário */
+  width: 300px;
 }
 
 .carteira-pontos p {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Lexend Extra', sans-serif;
   color: #3D3A50;
   text-align: left;
   padding: 20px;
-  max-width: 50%; /* Ajuste o tamanho do texto conforme necessário */
 }
