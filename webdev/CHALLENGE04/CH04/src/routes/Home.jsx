@@ -1,19 +1,15 @@
 import {} from 'react';
-import Logo from '../assets/logomenor.png';
-import Nomelogo from '../assets/TYBA.png';
 import Conceito from '../assets/apresentacao-removebg-preview.png';
 import Lampada from '../assets/lampada.png'
-import Engrenagem from '../assets/engrenagem.png'
+import Engrenagem from '../assets/servico.png'
 import Dolar from '../assets/dolar-removebg-preview.png'
-import '../CSS/Home.css';
+import '../SCSS/Home.scss';
 
 function Home() {
   return (
     <div className="page-container">
       <div className="centro-container">
-        <img src={Logo} alt="Logo1" />
       </div>
-      <img src={Nomelogo} alt="Nomelogo" className='Nometyba' />
       <div>
         <section className='QuemSomos'>
           <div className="conteudo">

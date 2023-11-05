@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Anton';
+    src: local('Anton-Regular'), url(../fonts/Anton-Regular.ttf);
+  }
+
+.Nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Nav li{
+    display: inline;
+    padding: 15px;
+}
+
+.Nav a{
+    padding: 20px;
+    text-decoration: none;
+    font-family: 'Anton', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: rgb(80, 218, 212);
+}
+
+.Nav a:hover {
+    filter: brightness(1.5);
+    transition: transform 0.8s, filter 0.8s;
+    transform: scale(1.1);
+    color: #049bff; /* Define a cor desejada para o hover */
+  }
+  
+.Logoimg{
+    padding: 30px;
+    width: 150px;
+}
+
+.Logoimg:hover{
+    transition: transform 0.3s, filter 0.3s;
+    transform: scale(1.1);
+    filter: brightness(1.5);
+    width: 150px;
+}
+
+.Nometyba {
+    width: 150px;
+    padding: 20px;
+}

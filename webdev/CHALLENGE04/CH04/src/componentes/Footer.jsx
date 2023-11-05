@@ -1,5 +1,5 @@
 import {} from 'react'
-import '../CSS/Footer.css';
+import '../SCSS/Footer.scss';
 import insta from '../assets/icons8-instagram-256.png'
 import whats from '../assets/icons8-whatsapp-400.png'
 import linkdin from '../assets/icons8-linkedin-128.png'

@@ -1,0 +1,135 @@
+@font-face {
+  font-family: 'Anton';
+  src: local('Anton-Regular'), url(../fonts/Anton-Regular.ttf);
+}
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(100, 199, 115, 0.986)), to(rgb(93,209,219,1))) fixed;
+  overflow-x: hidden;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 10%;
+  }
+  
+  .centro-container {
+    margin-top: 0px; /* Ajuste a margem superior conforme necessário para o espaçamento desejado. */
+  }
+
+  .centro-container img{
+    width: 100px;
+  }
+  
+
+.QuemSomos {
+    width: 100%;
+  }
+  
+.conteudo {
+  padding: 100px;
+  line-height: 50px;
+  font-family: 'Anton', sans-serif;
+  color: #ffffff;
+  display: flex;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  justify-content: space-between;
+  text-align: left;
+  font-size: 25px;
+}
+
+    
+.conceito {
+    width:350px;
+  }
+
+.engrenagem{
+    margin-top: 10px;
+    width: 200px;
+    padding: 20px;
+}
+
+.servicos{
+    font-size: 35px;
+    font-family:'Anton', sans-serif ;
+    color:white ;
+}
+
+.planos-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plano {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+  line-height: 35px;
+  margin-top: 50px;
+  margin-left: 15px;
+  width: 30%; /* Ajuste a largura conforme necessário */
+  padding: 20px;
+  background-color: #5DD1DB;
+  border-radius:50px ;
+}
+
+.plano p{
+  
+    font-size: 24px;
+    font-family: 'Lexend Extra', sans-serif;
+    font-weight: bold;
+    color:#3D3A50;
+}
+
+h2 {
+  line-height: 35px;
+  font-family: 'Lexend Extra', sans-serif;
+  color: #3D3A50 ;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+ul {
+  line-height: 35px;
+  font-size:24px;
+  color: #3D3A50 ;
+  font-family: 'Lexend Extra', sans-serif;
+  list-style: none;
+}
+
+ul li {
+  padding: 5px 0;
+}
+
+.carteira-pontos {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adicione a sombra aqui */
+  margin-top: 50px;
+  background-color: #27F2B9;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row; /* Alinhar conteúdo lado a lado */
+  justify-content: space-between 10px; /* Colocar o conteúdo à direita e à esquerda */
+  align-items: center; /* Alinhar verticalmente ao centro */
+}
+
+.carteira-pontos img {
+  width: 300px;
+}
+
+.carteira-pontos p {
+  line-height: 35px;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Lexend Extra', sans-serif;
+  color: #3D3A50;
+  text-align: left;
+  padding: 20px;
+}

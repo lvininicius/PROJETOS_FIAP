@@ -1,0 +1,40 @@
+// Login.scss
+
+.Login {
+    background: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+    h1 {
+        color: #3D3A50;
+        font-family: 'Lexend Extra', sans-serif;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 300px; // Define a largura máxima do formulário.
+}
+
+.btn {
+    background: #3D3A50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px; // Adicione margem no topo do botão para ajustar o espaçamento.
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0; // Adicione margem no topo e na parte inferior dos campos de entrada.
+}
