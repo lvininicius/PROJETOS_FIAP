@@ -2,31 +2,72 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Servicos extends Component {
-  state = {
-    lixeiras: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      lixeiras: [],
+      nomeLixeira: '',
+      cidadeLixeira: '',
+      localLixeira: '',
+      isLoading: false,
+      errorMessage: '',
+    };
+  }
 
   componentDidMount() {
-    // Faça uma solicitação GET para a API Flask que retorna as lixeiras
     axios.get('http://localhost:5000/consultar')
       .then(response => {
-        // Atualize o estado com os dados da API (lixeiras)
-        this.setState({ lixeiras: response.data });
+        console.log(response.data); // Adicione esta linha
+        if (Array.isArray(response.data)) {
+          this.setState({ lixeiras: response.data });
+        } else {
+          console.error('Resposta da API não é um array:', response.data);
+        }
       })
       .catch(error => {
         console.error('Erro ao consultar a API:', error);
       });
   }
-
   handleLogout = () => {
-    // Limpe os dados de sessão que simulam o login
     sessionStorage.removeItem('userData');
     sessionStorage.removeItem('senhaData');
-
-    // Redirecione o usuário para a página de login usando a função window.location
     window.location.href = '/login';
   };
 
+  handleInputChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const lixeiraData = {
+      nomeLixeira: this.state.nomeLixeira,
+      cidadeLixeira: this.state.cidadeLixeira,
+      localLixeira: this.state.localLixeira,
+    };
+
+    this.setState({ isLoading: true, errorMessage: '' });
+
+    axios
+      .post('http://localhost:5000/cadastro', lixeiraData)
+      .then(response => {
+        console.log('Resposta da API:', response.data);
+        this.setState({
+          nomeLixeira: '',
+          cidadeLixeira: '',
+          localLixeira: '',
+        });
+        const updatedLixeiras = [...this.state.lixeiras, response.data];
+        this.setState({ lixeiras: updatedLixeiras });
+      })
+      .catch(error => {
+        console.error('Erro na solicitação da API:', error);
+        this.setState({ errorMessage: 'Erro ao cadastrar a lixeira. Por favor, tente novamente.' });
+      })
+      .finally(() => {
+        this.setState({ isLoading: false });
+      });
+  };
   render() {
     return (
       <div>
@@ -38,10 +79,44 @@ class Servicos extends Component {
             <ul>
               {this.state.lixeiras.map((lixeira, index) => (
                 <li key={index}>
-                  {lixeira[0]} - {lixeira[1]}
+                  {lixeira.nomeLixeira} - {lixeira.cidadeLixeira} - {lixeira.localLixeira}
                 </li>
               ))}
             </ul>
+            <h2>Cadastrar Lixeira</h2>
+            {this.state.errorMessage && <div style={{ color: 'red' }}>{this.state.errorMessage}</div>}
+            <form onSubmit={this.handleSubmit}>
+              <div>
+                <label>Nome da Lixeira:</label>
+                <input
+                  type="text"
+                  name="nomeLixeira"
+                  value={this.state.nomeLixeira}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+              <div>
+                <label>Cidade da Lixeira:</label>
+                <input
+                  type="text"
+                  name="cidadeLixeira"
+                  value={this.state.cidadeLixeira}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+              <div>
+                <label>Local da Lixeira:</label>
+                <input
+                  type="text"
+                  name="localLixeira"
+                  value={this.state.localLixeira}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+              <button type="submit" disabled={this.state.isLoading}>
+                {this.state.isLoading ? 'Aguarde...' : 'Cadastrar'}
+              </button>
+            </form>
           </div>
         )}
       </div>
