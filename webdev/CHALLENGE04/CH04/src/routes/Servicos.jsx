@@ -15,9 +15,12 @@ class Servicos extends Component {
   }
 
   componentDidMount() {
+    this.fetchLixeiras();
+  }
+
+  fetchLixeiras = () => {
     axios.get('http://localhost:5000/consultar')
       .then(response => {
-        console.log(response.data); // Adicione esta linha
         if (Array.isArray(response.data)) {
           this.setState({ lixeiras: response.data });
         } else {
@@ -28,6 +31,7 @@ class Servicos extends Component {
         console.error('Erro ao consultar a API:', error);
       });
   }
+
   handleLogout = () => {
     sessionStorage.removeItem('userData');
     sessionStorage.removeItem('senhaData');
@@ -57,8 +61,7 @@ class Servicos extends Component {
           cidadeLixeira: '',
           localLixeira: '',
         });
-        const updatedLixeiras = [...this.state.lixeiras, response.data];
-        this.setState({ lixeiras: updatedLixeiras });
+        this.fetchLixeiras(); // Atualiza a lista após cadastrar uma nova lixeira
       })
       .catch(error => {
         console.error('Erro na solicitação da API:', error);
@@ -68,6 +71,21 @@ class Servicos extends Component {
         this.setState({ isLoading: false });
       });
   };
+
+  handleDelete = (lixeiraId) => {
+    axios
+      .delete(`http://localhost:5000/excluir/${lixeiraId}`)
+      .then(response => {
+        console.log('Resposta da API:', response.data);
+        const updatedLixeiras = this.state.lixeiras.filter(lixeira => lixeira.id !== lixeiraId);
+        this.setState({ lixeiras: updatedLixeiras });
+      })
+      .catch(error => {
+        console.error('Erro na solicitação da API:', error);
+        // Adicione aqui o tratamento de erro, se necessário
+      });
+  };
+
   render() {
     return (
       <div>
@@ -80,6 +98,7 @@ class Servicos extends Component {
               {this.state.lixeiras.map((lixeira, index) => (
                 <li key={index}>
                   {lixeira.nomeLixeira} - {lixeira.cidadeLixeira} - {lixeira.localLixeira}
+                  <button onClick={() => this.handleDelete(lixeira.id)}>Excluir</button>
                 </li>
               ))}
             </ul>

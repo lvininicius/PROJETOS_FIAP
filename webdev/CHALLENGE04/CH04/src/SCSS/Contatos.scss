@@ -1,0 +1,28 @@
+.contatos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .slick-slider {
+    width: 50%; // Ajuste a largura conforme necessário
+  }
+
+  .carousel-item {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      margin-top:50px;
+      width: 40%; // Ajuste conforme necessário
+      border-radius: 1000px;
+    }
+
+    p {
+      margin-top: 10px; // Ajuste conforme necessário
+      font-weight: bold; // Estilo da fonte
+      text-align: center; // Centralizar o texto
+    }
+  }
+}

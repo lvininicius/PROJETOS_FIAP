@@ -49,7 +49,7 @@ def cadastrar_lixeira():
         }
 
         # Carregue os dados existentes do arquivo JSON
-        with open(json_file_path, 'r') as arquivo_json:
+        with open(json_file_path, 'r', encoding='utf-8') as arquivo_json:
             dados = json.load(arquivo_json)
 
         # Adicione a nova lixeira aos dados existentes

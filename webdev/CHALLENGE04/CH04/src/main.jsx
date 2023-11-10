@@ -6,6 +6,7 @@ import Servicos from './routes/Servicos.jsx'
 import Footer from './componentes/Footer.jsx'
 import Nav from './componentes/Nav.jsx'
 import Login from './routes/Login.jsx'
+import Contatos from './routes/Contatos.jsx'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element: <Home /> },
       { path: '/Nav', element: <Nav /> },
+      { path: '/Contatos', element: <Contatos /> },
       { path: '/Login', element: <Login /> }, // Corrigido para '/Login'
       { path: '/Servicos', element: <Servicos /> }, // Corrigido para '/Servicos'
       { path: '/Footer', element: <Footer /> },

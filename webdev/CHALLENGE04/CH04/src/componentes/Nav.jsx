@@ -8,15 +8,18 @@ import { Link } from 'react-router-dom';
 function Nav() {
   return (
     <div className='Nav'>
-    <img src={Logo} alt="Logo1" className='Logoimg' />
-    <img src={Nomelogo} alt="Nomelogo" className='Nometyba'/>
-    <nav>
-      <ul>
-        <li><a><Link to="/Login">Login</Link></a></li>
-        <li><a><Link to="/">About</Link></a></li>
-        <li><a><Link to="/">Contact</Link></a></li>
-      </ul>
-    </nav>
+      <Link to="./">
+        <img src={Logo} alt="Logo1" className='Logoimg' />
+      </Link>
+
+      <img src={Nomelogo} alt="Nomelogo" className='Nometyba' />
+      <nav>
+        <ul>
+          <li><Link to="/Login">Login</Link></li>
+          <li><Link to="/">About</Link></li>
+          <li><Link to="/Contatos">Contact</Link></li>
+        </ul>
+      </nav>
     </div>
   );
 }
