@@ -18,6 +18,37 @@ if not os.path.exists(json_file_path):
     with open(json_file_path, 'w') as arquivo_json:
         json.dump([], arquivo_json)
 
+@app.route('/cadastro_arduino', methods=['POST'])
+def cadastrar_lixeira_arduino():
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({"error": "Dados ausentes"}), 400
+
+        volume = data.get('volume')
+
+        if volume is None:
+            return jsonify({"error": "Campo 'volume' ausente"}), 400
+
+        lixeira = {
+            'volume': volume
+        }
+
+        # Carregue os dados existentes do arquivo JSON
+        with open(json_file_path, 'r', encoding='utf-8') as arquivo_json:
+            dados = json.load(arquivo_json)
+
+        # Adicione o novo volume aos dados existentes
+        dados.append(lixeira)
+
+        # Salve os dados atualizados de volta no arquivo JSON
+        with open(json_file_path, 'w') as arquivo_json:
+            json.dump(dados, arquivo_json, indent=2)
+
+        return jsonify({"message": "Volume registrado com sucesso!"}), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
 @app.route('/consultar', methods=['GET'])
 def consultar_lixeiras():
     try:

@@ -20,6 +20,7 @@ class Servicos extends Component {
 
   fetchLixeiras = () => {
     axios.get('http://localhost:5000/consultar')
+    axios.get('http://{{url}}:4041/iot/about')
       .then(response => {
         if (Array.isArray(response.data)) {
           this.setState({ lixeiras: response.data });
