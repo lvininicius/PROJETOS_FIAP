@@ -15,8 +15,8 @@ json_file_path = os.path.join('data', 'lixeiras.json')
 
 # Verifica se o arquivo JSON existe e cria se não existir
 if not os.path.exists(json_file_path):
-    with open(json_file_path, 'w') as arquivo_json:
-        json.dump([], arquivo_json)
+    with open(json_file_path, 'w', encoding="utf-8") as arquivo_json:
+        json.dump([], arquivo_json, ensure_ascii=False)
 
 @app.route('/cadastro_arduino', methods=['POST'])
 def cadastrar_lixeira_arduino():
@@ -42,8 +42,8 @@ def cadastrar_lixeira_arduino():
         dados.append(lixeira)
 
         # Salve os dados atualizados de volta no arquivo JSON
-        with open(json_file_path, 'w') as arquivo_json:
-            json.dump(dados, arquivo_json, indent=2)
+        with open(json_file_path, 'w', encoding="utf-8") as arquivo_json:
+            json.dump(dados, arquivo_json,ensure_ascii=False, indent=2)
 
         return jsonify({"message": "Volume registrado com sucesso!"}), 201
     except Exception as e:
@@ -87,8 +87,8 @@ def cadastrar_lixeira():
         dados.append(lixeira)
 
         # Salve os dados atualizados de volta no arquivo JSON
-        with open(json_file_path, 'w') as arquivo_json:
-            json.dump(dados, arquivo_json, indent=2)
+        with open(json_file_path, 'w', encoding="utf-8") as arquivo_json:
+            json.dump(dados, arquivo_json,ensure_ascii=False, indent=2)
 
         return jsonify({"message": "Lixeira cadastrada com sucesso!"}), 201
     except Exception as e:
