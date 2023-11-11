@@ -94,5 +94,36 @@ def cadastrar_lixeira():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
+@app.route('/excluir', methods=['POST'])
+def excluir_lixeira():
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({"error": "Dados ausentes"}), 400
+
+        nomeLixeira = data.get('nomeLixeira')
+
+        if not nomeLixeira:
+            return jsonify({"error": "Campo 'nomeLixeira' ausente"}), 400
+
+        with open(json_file_path, 'r', encoding='utf-8') as arquivo_json:
+            dados = json.load(arquivo_json)
+
+        # Encontrar a lixeira pelo nome
+        lixeira_para_excluir = next((lixeira for lixeira in dados if lixeira['nomeLixeira'] == nomeLixeira), None)
+
+        if lixeira_para_excluir:
+            dados.remove(lixeira_para_excluir)
+
+            # Salvar os dados atualizados de volta no arquivo JSON
+            with open(json_file_path, 'w', encoding='utf-8') as arquivo_json:
+                json.dump(dados, arquivo_json, indent=2)
+
+            return jsonify({"message": "Lixeira excluída com sucesso!"}), 200
+        else:
+            return jsonify({"error": "Lixeira não encontrada"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
 if __name__ == '__main__':
     app.run(debug=True)

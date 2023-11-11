@@ -20,7 +20,6 @@ class Servicos extends Component {
 
   fetchLixeiras = () => {
     axios.get('http://localhost:5000/consultar')
-    axios.get('http://{{url}}:4041/iot/about')
       .then(response => {
         if (Array.isArray(response.data)) {
           this.setState({ lixeiras: response.data });
@@ -73,20 +72,22 @@ class Servicos extends Component {
       });
   };
 
-  handleDelete = (lixeiraId) => {
-    axios
-      .delete(`http://localhost:5000/excluir/${lixeiraId}`)
-      .then(response => {
-        console.log('Resposta da API:', response.data);
-        const updatedLixeiras = this.state.lixeiras.filter(lixeira => lixeira.id !== lixeiraId);
-        this.setState({ lixeiras: updatedLixeiras });
-      })
-      .catch(error => {
-        console.error('Erro na solicitação da API:', error);
-        // Adicione aqui o tratamento de erro, se necessário
-      });
-  };
+  handleDelete = (lixeiraNome) => {
+  axios
+    .post('http://localhost:5000/excluir', { nomeLixeira: lixeiraNome })
+    .then(response => {
+      console.log('Resposta da API:', response.data);
+      const updatedLixeiras = this.state.lixeiras.filter(lixeira => lixeira.nomeLixeira !== lixeiraNome);
+      this.setState({ lixeiras: updatedLixeiras });
 
+      // Recarregar a página após a exclusão bem-sucedida
+      window.location.reload();
+    })
+    .catch(error => {
+      console.error('Erro na solicitação da API:', error);
+      // Adicione aqui o tratamento de erro, se necessário
+    });
+};
   render() {
     return (
       <div>
@@ -99,7 +100,7 @@ class Servicos extends Component {
               {this.state.lixeiras.map((lixeira, index) => (
                 <li key={index}>
                   {lixeira.nomeLixeira} - {lixeira.cidadeLixeira} - {lixeira.localLixeira}
-                  <button onClick={() => this.handleDelete(lixeira.id)}>Excluir</button>
+                  <button onClick={() => this.handleDelete(lixeira.nomeLixeira)}>Excluir</button>
                 </li>
               ))}
             </ul>
