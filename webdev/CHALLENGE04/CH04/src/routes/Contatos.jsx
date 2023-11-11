@@ -10,9 +10,9 @@ import Lucas from '../assets/lucas.png';
 
 const Contatos = () => {
   const participants = [
-    { id: 1, name: 'Gabriel Riqueto', image: Riqueto },
+    { id: 1, name: 'Lucas Vinicius', image: Lucas },
     { id: 2, name: 'Gabiriel Oliveria', image: Oliveria },
-    { id: 3, name: 'Lucas Vinicius', image: Lucas },
+    { id: 3, name: 'Gabriel Riqueto', image: Riqueto },
   ];
 
   const settings = {

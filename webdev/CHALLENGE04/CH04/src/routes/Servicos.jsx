@@ -90,57 +90,96 @@ class Servicos extends Component {
 };
   render() {
     return (
-      <div>
-        <h1>Serviços</h1>
-        {sessionStorage.getItem('userData') === 'admin' && (
-          <div>
-            <button onClick={this.handleLogout}>Sair</button>
-            <h2>Lista de Lixeiras</h2>
-            <ul>
-              {this.state.lixeiras.map((lixeira, index) => (
-                <li key={index}>
-                  {lixeira.nomeLixeira} - {lixeira.cidadeLixeira} - {lixeira.localLixeira}
-                  <button onClick={() => this.handleDelete(lixeira.nomeLixeira)}>Excluir</button>
-                </li>
-              ))}
-            </ul>
-            <h2>Cadastrar Lixeira</h2>
-            {this.state.errorMessage && <div style={{ color: 'red' }}>{this.state.errorMessage}</div>}
-            <form onSubmit={this.handleSubmit}>
-              <div>
-                <label>Nome da Lixeira:</label>
-                <input
-                  type="text"
-                  name="nomeLixeira"
-                  value={this.state.nomeLixeira}
-                  onChange={this.handleInputChange}
-                />
+      <div className="container mt-5 d-flex justify-content-center align-items-center">
+        <div className="card bg-dark text-white">
+          <h1 className="mt-3 text-center">Serviços</h1>
+          {sessionStorage.getItem('userData') === 'admin' && (
+            <div className="text-center ">
+              <div className="my-5 d-flex justify-content-center align-items-center">
+                <button className="btn btn-danger" onClick={this.handleLogout}>
+                  Sair
+                </button>
               </div>
-              <div>
-                <label>Cidade da Lixeira:</label>
-                <input
-                  type="text"
-                  name="cidadeLixeira"
-                  value={this.state.cidadeLixeira}
-                  onChange={this.handleInputChange}
-                />
-              </div>
-              <div>
-                <label>Local da Lixeira:</label>
-                <input
-                  type="text"
-                  name="localLixeira"
-                  value={this.state.localLixeira}
-                  onChange={this.handleInputChange}
-                />
-              </div>
-              <button type="submit" disabled={this.state.isLoading}>
-                {this.state.isLoading ? 'Aguarde...' : 'Cadastrar'}
-              </button>
-            </form>
-          </div>
-        )}
-      </div>
+              <h2 className="mb-4">Lista de Lixeiras:</h2>
+              <ul className="list-group">
+                {this.state.lixeiras.map((lixeira, index) => (
+                  <li
+                    key={index}
+                    className="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      {lixeira.nomeLixeira} - {lixeira.cidadeLixeira} - {lixeira.localLixeira}
+                    </div>
+                    <button
+                      className="btn btn-danger ml-5"
+                      onClick={() => this.handleDelete(lixeira.nomeLixeira)}
+                    >
+                      Excluir
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <h2 className="mt-4 mb-3">Cadastrar Lixeira</h2>
+              {this.state.errorMessage && (
+                <div className="alert alert-danger" role="alert">
+                  {this.state.errorMessage}
+                </div>
+              )}
+              <form onSubmit={this.handleSubmit} className="allign-items-center">
+                <div>
+                  <div className="mb-3">
+                    <label htmlFor="nomeLixeira" className="form-label">
+                      Nome da Lixeira:
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="nomeLixeira"
+                      name="nomeLixeira"
+                      value={this.state.nomeLixeira}
+                      onChange={this.handleInputChange}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="cidadeLixeira" className="form-label">
+                      Cidade da Lixeira:
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="cidadeLixeira"
+                      name="cidadeLixeira"
+                      value={this.state.cidadeLixeira}
+                      onChange={this.handleInputChange}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="localLixeira" className="form-label">
+                      Local da Lixeira:
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="localLixeira"
+                      name="localLixeira"
+                      value={this.state.localLixeira}
+                      onChange={this.handleInputChange}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    disabled={this.state.isLoading}
+                  >
+                    {this.state.isLoading ? 'Aguarde...' : 'Cadastrar'}
+                  </button>
+                </div>
+              </form>
+            </div>
+          )}
+        </div>
+    </div>
+
     );
   }
 }
